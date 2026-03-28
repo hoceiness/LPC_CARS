@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">LPC_CARS</string>
+    <string name="profile">Profil</string>
+    <string name="settings">Paramètres</string>
+    <string name="history">Historique</string>
+    <string name="languages">Langues</string>
+    <string name="log_out">Se déconnecter</string>
+    <string name="edit_profile">Modifier le profil</string>
+    <string name="personal_details">Détails personnels</string>
+    <string name="phone">Téléphone :</string>
+    <string name="cin">CIN :</string>
+    <string name="license_no">N° de permis :</string>
+    <string name="connected_to_lpc">Connecté à LPC Partnerships</string>
+    <string name="live_contracts">Contrats en cours</string>
+    <string name="awaiting_reservations">Réservations en attente</string>
+    <string name="help_support">Aide et support</string>
+    <string name="select_language">Choisir la langue</string>
+    <string name="english">Anglais</string>
+    <string name="french">Français</string>
+    <string name="arabic">Arabe</string>
+    <string name="cancel">Annuler</string>
+    <string name="ok">OK</string>
+</resources>
