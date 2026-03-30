@@ -155,8 +155,16 @@ class MainActivity : AppCompatActivity() {
 
     private fun fetchBrands() {
         db.collection("brands").get().addOnSuccessListener { documents ->
-            val brands = documents.mapNotNull { it.getString("name") }
-            binding.rvBrands.adapter = BrandAdapter(brands)
+            val brandList = documents.mapNotNull { doc ->
+                val name = doc.getString("name")
+                val image = doc.getString("image")
+
+                if (name != null && image != null) {
+                    brands(name, image)
+                } else null
+            }
+
+            binding.rvBrands.adapter = BrandAdapter(brandList)
         }
     }
 
@@ -173,14 +181,17 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    inner class BrandAdapter(private val brands: List<String>) : RecyclerView.Adapter<BrandAdapter.ViewHolder>() {
+    inner class BrandAdapter(private val brands: List<brands>) : RecyclerView.Adapter<BrandAdapter.ViewHolder>() {
         inner class ViewHolder(val binding: ItemBrandBinding) : RecyclerView.ViewHolder(binding.root)
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
             val b = ItemBrandBinding.inflate(LayoutInflater.from(parent.context), parent, false)
             return ViewHolder(b)
         }
         override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-            holder.binding.tvBrandName.text = brands[position]
+            holder.binding.tvBrandName.text = brands[position].name
+            Glide.with(holder.itemView.context)
+                .load(brands[position].image)
+                .into(holder.binding.ivBrandLogo)
         }
         override fun getItemCount() = brands.size
     }
