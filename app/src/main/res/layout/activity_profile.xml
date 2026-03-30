@@ -261,12 +261,10 @@
                     android:gravity="center_vertical"
                     android:padding="12dp">
                     <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:background="@drawable/bg_circle_white"
-                        android:padding="10dp"
-                        android:src="@drawable/history_icon"
-                        app:tint="@color/text_gray" />
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/history_icon" />
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -292,12 +290,10 @@
                     android:gravity="center_vertical"
                     android:padding="12dp">
                     <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:background="@drawable/bg_circle_white"
-                        android:padding="10dp"
-                        android:src="@drawable/connect_icon"
-                        app:tint="@color/text_gray" />
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/connect_icon" />
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -324,12 +320,10 @@
                     android:gravity="center_vertical"
                     android:padding="12dp">
                     <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:background="@drawable/bg_circle_white"
-                        android:padding="10dp"
-                        android:src="@drawable/language_icon"
-                        app:tint="@color/text_gray" />
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/language_icon" />
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -356,12 +350,10 @@
                     android:gravity="center_vertical"
                     android:padding="12dp">
                     <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:background="@drawable/bg_circle_white"
-                        android:padding="10dp"
-                        android:src="@drawable/live_contracts_icon"
-                        app:tint="@color/text_gray" />
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/live_contracts_icon" />
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -379,6 +371,7 @@
 
                 <!-- 5. Awaiting reservations -->
                 <LinearLayout
+                    android:id="@+id/llAwaitingReservations"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="24dp"
@@ -387,12 +380,10 @@
                     android:gravity="center_vertical"
                     android:padding="12dp">
                     <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:background="@drawable/bg_circle_white"
-                        android:padding="10dp"
-                        android:src="@drawable/awaiting_reservatyion_icon"
-                        app:tint="@color/text_gray" />
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/awaiting_reservatyion_icon" />
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -418,12 +409,10 @@
                     android:gravity="center_vertical"
                     android:padding="12dp">
                     <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:background="@drawable/bg_circle_white"
-                        android:padding="10dp"
-                        android:src="@drawable/help_support_icon"
-                        app:tint="@color/text_gray" />
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/help_support_icon" />
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -450,25 +439,23 @@
                     android:gravity="center_vertical"
                     android:padding="12dp">
                     <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:background="@drawable/bg_circle_white"
-                        android:padding="10dp"
-                        android:src="@drawable/logout_icon"
-                        app:tint="@color/text_gray" />
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/logout_icon" />
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:layout_weight="1"
                         android:text="Log out"
-                        android:textColor="@color/black"
+                        android:textColor="@color/logout_red"
                         android:textSize="14sp" />
                     <ImageView
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:src="@drawable/arrow_icon"
-                        app:tint="@color/text_gray" />
+                        app:tint="@color/logout_red" />
                 </LinearLayout>
 
             </LinearLayout>

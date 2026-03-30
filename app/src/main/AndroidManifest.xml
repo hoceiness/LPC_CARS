@@ -31,7 +31,7 @@
         android:theme="@style/Theme.LpcOriginApp">
 
         <activity
-            android:name=".AdminHomeActivity"
+            android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -39,12 +39,12 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".AdminHomeActivity" />
         <activity android:name=".SignupActivity" />
         <activity android:name=".EnterVerificationCodeActivity" />
         <activity android:name=".ResetPasswordActivity" />
         <activity android:name=".VerifyResetPasswordActivity" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".LoginActivity" />
         <activity android:name=".AddCarActivity" />
         <activity android:name=".CarDetailsActivity" />
         <activity android:name=".ProfileActivity" />
@@ -57,6 +57,7 @@
         <activity android:name=".NotificationsActivity" />
         <activity android:name=".FavouriteActivity" />
         <activity android:name=".TrackingActivity" />
+        <activity android:name=".AwaitingReservationActivity" />
 
         <service
             android:name=".LocationService"

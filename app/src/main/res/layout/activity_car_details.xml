@@ -163,17 +163,23 @@
                         android:orientation="horizontal">
 
                         <ImageView
+                            android:id="@+id/ivCallAdmin"
                             android:layout_width="40dp"
                             android:layout_height="40dp"
                             android:background="@drawable/bg_circle_white"
+                            android:clickable="true"
+                            android:focusable="true"
                             android:padding="10dp"
                             android:src="@drawable/phone_icon" />
 
                         <ImageView
+                            android:id="@+id/ivWhatsappAdmin"
                             android:layout_width="40dp"
                             android:layout_height="40dp"
                             android:layout_marginStart="12dp"
                             android:background="@drawable/bg_circle_white"
+                            android:clickable="true"
+                            android:focusable="true"
                             android:padding="10dp"
                             android:src="@drawable/whatsapp_icon" />
                     </LinearLayout>

@@ -18,4 +18,6 @@
 
     <color name="primary_dark">#1C2023</color>
     <color name="bg_button_primary">#1C2023</color>
+    <color name="logout_red">#E53935</color>
+    <color name="icon_bg_gray">#F5F6F8</color>
 </resources>

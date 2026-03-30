@@ -108,6 +108,7 @@
                     app:layout_constraintEnd_toEndOf="parent" />
 
                 <TextView
+                    android:id="@+id/tvDisplayCardNumber"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
@@ -173,6 +174,7 @@
                 android:textStyle="bold" />
 
             <EditText
+                android:id="@+id/etFullName"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:layout_marginTop="12dp"
@@ -183,6 +185,7 @@
                 android:inputType="textPersonName" />
 
             <EditText
+                android:id="@+id/etEmail"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:layout_marginTop="12dp"
@@ -198,6 +201,7 @@
                 android:layout_marginTop="12dp">
 
                 <EditText
+                    android:id="@+id/etCardNumber"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/bg_edittext"
@@ -223,6 +227,7 @@
                 android:orientation="horizontal">
 
                 <EditText
+                    android:id="@+id/etExpiryDate"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -242,6 +247,7 @@
                     android:layout_weight="1">
 
                     <EditText
+                        android:id="@+id/etCVC"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@drawable/bg_edittext"
@@ -296,6 +302,7 @@
             </FrameLayout>
 
             <EditText
+                android:id="@+id/etZipCode"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:layout_marginTop="12dp"
@@ -307,6 +314,7 @@
 
             <!-- Checkbox -->
             <CheckBox
+                android:id="@+id/cbTerms"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"

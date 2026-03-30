@@ -32,7 +32,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Payment States"
+            android:text="Payment Status"
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -93,7 +93,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="8dp"
-                android:text="Your car rent Booking has been successfully"
+                android:text="Your car rent Booking has been successful"
                 android:textColor="@color/text_gray"
                 android:textSize="14sp" />
 
@@ -131,10 +131,11 @@
                         android:textColor="@color/text_gray"
                         android:textSize="14sp" />
                     <TextView
+                        android:id="@+id/tvCarModel"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
-                        android:text="Tesla Model 3"
+                        android:text="-"
                         android:textColor="@color/black"
                         android:textSize="14sp"
                         android:textStyle="bold" />
@@ -151,10 +152,11 @@
                         android:textColor="@color/text_gray"
                         android:textSize="14sp" />
                     <TextView
+                        android:id="@+id/tvRentalDate"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
-                        android:text="19Jan24 - 22Jan 24"
+                        android:text="-"
                         android:textColor="@color/black"
                         android:textSize="14sp"
                         android:textStyle="bold" />
@@ -171,10 +173,11 @@
                         android:textColor="@color/text_gray"
                         android:textSize="14sp" />
                     <TextView
+                        android:id="@+id/tvUserName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
-                        android:text="Benjamin Jack"
+                        android:text="-"
                         android:textColor="@color/black"
                         android:textSize="14sp"
                         android:textStyle="bold" />
@@ -207,10 +210,11 @@
                     android:textColor="@color/text_gray"
                     android:textSize="14sp" />
                 <TextView
+                    android:id="@+id/tvTransactionId"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
-                    android:text="#T000123B0J1"
+                    android:text="-"
                     android:textColor="@color/black"
                     android:textSize="14sp"
                     android:textStyle="bold" />
@@ -227,10 +231,11 @@
                     android:textColor="@color/text_gray"
                     android:textSize="14sp" />
                 <TextView
+                    android:id="@+id/tvTransactionDate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
-                    android:text="01Jan2024 - 10:30 am"
+                    android:text="-"
                     android:textColor="@color/black"
                     android:textSize="14sp"
                     android:textStyle="bold" />
@@ -259,9 +264,10 @@
                         android:scaleType="fitCenter"
                         android:src="@drawable/paymentmethod_card_icon" />
                     <TextView
+                        android:id="@+id/tvCardNumberMasked"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="123 *** *** ***225"
+                        android:text="**** **** **** 0000"
                         android:textColor="@color/black"
                         android:textSize="14sp"
                         android:textStyle="bold" />
@@ -286,10 +292,11 @@
                     android:textColor="@color/text_gray"
                     android:textSize="14sp" />
                 <TextView
+                    android:id="@+id/tvBaseAmount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
-                    android:text="$1400"
+                    android:text="0 MAD"
                     android:textColor="@color/black"
                     android:textSize="14sp"
                     android:textStyle="bold" />
@@ -306,10 +313,11 @@
                     android:textColor="@color/text_gray"
                     android:textSize="14sp" />
                 <TextView
+                    android:id="@+id/tvServiceFee"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
-                    android:text="$15"
+                    android:text="15 MAD"
                     android:textColor="@color/black"
                     android:textSize="14sp"
                     android:textStyle="bold" />
@@ -326,10 +334,11 @@
                     android:textColor="@color/text_gray"
                     android:textSize="14sp" />
                 <TextView
+                    android:id="@+id/tvTax"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
-                    android:text="$0"
+                    android:text="0 MAD"
                     android:textColor="@color/black"
                     android:textSize="14sp"
                     android:textStyle="bold" />
@@ -354,10 +363,11 @@
                     android:textSize="16sp"
                     android:textStyle="bold" />
                 <TextView
+                    android:id="@+id/tvTotalAmount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
-                    android:text="$1415"
+                    android:text="0 MAD"
                     android:textColor="@color/black"
                     android:textSize="16sp"
                     android:textStyle="bold" />

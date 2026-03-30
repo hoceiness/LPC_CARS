@@ -3,6 +3,7 @@ package com.example.lpc_origin_app
 import android.content.Intent
 import android.content.res.ColorStateList
 import android.graphics.Color
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -25,6 +26,7 @@ class CarDetailsActivity : AppCompatActivity() {
     private var currentCar: Car? = null
     private var isFavourite = false
     private var favouriteId: String? = null
+    private var adminPhone: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -69,6 +71,23 @@ class CarDetailsActivity : AppCompatActivity() {
         binding.btnFavourite.setOnClickListener {
             toggleFavourite(carId)
         }
+
+        binding.ivCallAdmin.setOnClickListener {
+            adminPhone?.let { phone ->
+                val intent = Intent(Intent.ACTION_DIAL)
+                intent.data = Uri.parse("tel:$phone")
+                startActivity(intent)
+            } ?: Toast.makeText(this, "Admin phone not available", Toast.LENGTH_SHORT).show()
+        }
+
+        binding.ivWhatsappAdmin.setOnClickListener {
+            adminPhone?.let { phone ->
+                val url = "https://api.whatsapp.com/send?phone=$phone"
+                val intent = Intent(Intent.ACTION_VIEW)
+                intent.data = Uri.parse(url)
+                startActivity(intent)
+            } ?: Toast.makeText(this, "Admin phone not available", Toast.LENGTH_SHORT).show()
+        }
     }
 
     // ================= FETCH DATA =================
@@ -96,9 +115,6 @@ class CarDetailsActivity : AppCompatActivity() {
                 binding.tvAdvance.text = f["Advance 1"] ?: "-"
                 binding.tvCharge.text = f["Charge"] ?: "-"
                 binding.tvInit.text = f["Advance 2"] ?: "-"
-
-                // ADMIN
-                loadAdminInfo()
 
                 // STATUS
                 if (car.status == "Available") {
@@ -148,28 +164,38 @@ class CarDetailsActivity : AppCompatActivity() {
             .addOnSuccessListener {
                 if (!it.isEmpty) {
                     val doc = it.documents[0]
-                    binding.tvAdminName.text = doc.getString("full_name") ?: "Admin"
-
-                    val img = doc.getString("profileImageUrl")
-                    if (!img.isNullOrEmpty()) {
-                        Glide.with(this).load(img).circleCrop().into(binding.ivAdmin)
-                    }
+                    adminPhone = doc.getString("phone_number")
+                    updateAdminUI(doc.getString("full_name"), doc.getString("profileImageUrl"))
                 }
             }
+    }
+
+    private fun updateAdminUI(name: String?, imageUrl: String?) {
+        binding.tvAdminName.text = name ?: "Admin"
+        if (!imageUrl.isNullOrEmpty()) {
+            Glide.with(this)
+                .load(imageUrl)
+                .circleCrop()
+                .placeholder(R.drawable.ste_logo)
+                .into(binding.ivAdmin)
+        }
     }
 
     // ================= USER ROLE =================
 
     private fun checkUserRole() {
         val uid = auth.currentUser?.uid ?: return
-        db.collection("users").document(uid).get().addOnSuccessListener {
-            val type = it.getString("type")
+        db.collection("users").document(uid).get().addOnSuccessListener { doc ->
+            val type = doc.getString("type")
             if (type == "Admin") {
                 binding.llAdminActions.visibility = View.VISIBLE
                 binding.btnBookNowBottom.visibility = View.GONE
+                adminPhone = doc.getString("phone_number")
+                updateAdminUI(doc.getString("full_name"), doc.getString("profileImageUrl"))
             } else {
                 binding.llAdminActions.visibility = View.GONE
                 binding.btnBookNowBottom.visibility = View.VISIBLE
+                loadAdminInfo()
             }
         }
     }

@@ -108,6 +108,10 @@ class ProfileActivity : AppCompatActivity() {
             startActivity(Intent(this, LiveContractsActivity::class.java))
         }
 
+        binding.llAwaitingReservations.setOnClickListener {
+            startActivity(Intent(this, AwaitingReservationActivity::class.java))
+        }
+
         binding.llLogout.setOnClickListener {
             logout()
         }
